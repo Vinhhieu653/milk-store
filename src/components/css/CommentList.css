@@ -1,0 +1,20 @@
+/* CommentList.css */
+
+.comment-list {
+  width: 100%;
+  padding: 0;
+}
+
+.comment-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 0;
+}
+
+.comment-rating {
+  margin-top: 4px;
+  color: #ffc107; /* Màu cho sao được chọn */
+}
+
+.comment-item:hover {
+  background-color: #f5f5f5;
+}

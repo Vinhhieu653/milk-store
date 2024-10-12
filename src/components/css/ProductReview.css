@@ -1,0 +1,26 @@
+/* ProductReview.css */
+
+.product-review-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.review-heading {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  margin-bottom: 20px;
+}
+
+.comment-list {
+  padding: 0;
+  list-style: none;
+}
+
+/* You can add more styles as per your design requirements */

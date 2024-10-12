@@ -1,0 +1,37 @@
+.product-detail-container {
+  /* CSS cho container chính */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.product-detail-info {
+  /* CSS cho phần thông tin sản phẩm */
+  margin-left: 20px;
+}
+
+.product-detail-image {
+  /* CSS cho hình ảnh sản phẩm */
+  width: 300px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-detail-info button {
+  /* CSS cho nút "Thêm vào giỏ hàng" */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-detail-info button:hover {
+  /* CSS khi hover vào nút */
+  background-color: #0056b3;
+}

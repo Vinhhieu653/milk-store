@@ -1,0 +1,113 @@
+.header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 80px; /* Giảm kích thước của logo */
+  height: auto;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo h1 {
+  font-size: 1.6em; /* Giảm kích thước chữ */
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logo h1:hover {
+  color: #ffa500;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin-right: 15px; /* Giảm khoảng cách giữa các mục menu */
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1em; /* Giảm kích thước chữ */
+  transition: color 0.3s ease;
+}
+
+.nav ul li.active a {
+  color: #ffa500; /* Màu chữ khi mục được chọn */
+  font-weight: bold; /* Đậm chữ khi mục được chọn */
+}
+
+.nav ul li a:hover {
+  color: #ffa500;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #cc8400;
+}
+
+.btn.register {
+  background: #4caf50;
+  transition: background 0.3s ease;
+}
+
+.btn.register:hover {
+  background: #45a049;
+}
+
+.cart-icon {
+  width: 50px; /* Giảm kích thước biểu tượng giỏ hàng */
+  height: auto;
+  margin-left: 15px; /* Giảm khoảng cách giữa biểu tượng giỏ hàng và nút */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
+.btn.logout {
+  background: #ff0800;
+  transition: background 0.3s ease;
+}
+
+.btn.logout:hover {
+  background: #cc0700;
+}
