@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './css/SlideShow.css';
 import Products from './Products'; // Import component Products
 
-
 const SlideShow = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-
     const slides = [
-        '/img/banner1.jpg',
-        '/img/banner2.jpg',
-        '/img/banner3.jpg',
-        '/img/banner4.jpg',
-        '/img/banner5.jpg'
+        '/img/banner1.webp',
+        '/img/banner2.webp',
+        '/img/banner3.webp',
+        '/img/banner4.webp',
+        '/img/banner5.webp'
     ];
+    const intervalRef = useRef(null); // Dùng ref để quản lý interval
 
     useEffect(() => {
-        // Thiết lập interval để tự động chuyển slide mỗi 5 giây
-        const interval = setInterval(() => {
+        // Thiết lập interval để tự động chuyển slide
+        intervalRef.current = setInterval(() => {
             setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
         }, 5000);
 
-        return () => clearInterval(interval);
-    }, []);
+        return () => clearInterval(intervalRef.current); // Xóa interval khi unmount
+    }, [slides.length]);
 
-    const handleDotClick = (index) => {
+    const handleDotClick = useCallback((index) => {
+        clearInterval(intervalRef.current); // Dừng chuyển động tự động khi click
         setCurrentSlide(index);
-    };
+    }, []);
 
     return (
         <div className="slideshow-container">
@@ -34,11 +34,11 @@ const SlideShow = () => {
                     <div
                         key={index}
                         className={index === currentSlide ? 'slide active' : 'slide'}
-                        style={{ backgroundImage: `url(${slide})` }}
+                        style={{ backgroundImage: `url(${index === currentSlide ? slide : ''})` }}
                     ></div>
                 ))}
                 <div className="pagination">
-                    {slides.map((slide, index) => (
+                    {slides.map((_, index) => (
                         <div
                             key={index}
                             className={index === currentSlide ? 'dot active' : 'dot'}
@@ -50,6 +50,6 @@ const SlideShow = () => {
             <div><Products /></div>
         </div>
     );
-}
+};
 
 export default SlideShow;
