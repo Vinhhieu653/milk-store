@@ -1,7 +1,6 @@
 //run be: node src/index.js
 //npx nodemon src/index.js
-import dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config();
 
 
 const express = require('express');
