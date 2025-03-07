@@ -1,5 +1,4 @@
 const CartItem = require('../models/CartItem')
-const mongoose = require('mongoose')
 
 // Thêm sản phẩm vào giỏ hàng
 exports.addToCart = async (req, res) => {

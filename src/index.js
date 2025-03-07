@@ -1,5 +1,3 @@
-//run be: node src/index.js
-//npx nodemon src/index.js
 require('dotenv').config()
 
 const express = require('express')

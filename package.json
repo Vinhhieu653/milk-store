@@ -5,10 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
+    "start": "nodemon src/index.js",
     "dev": "nodemon src/index.js",
     "build": "echo 'No build step needed'",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint src --fix"
   },
   "author": "Collin",
   "license": "ISC",
@@ -28,6 +29,9 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0",
     "nodemon": "^3.1.4",
     "prettier": "^3.5.3"
   }
