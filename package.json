@@ -1,15 +1,16 @@
 {
   "name": "asm_fer202_be",
   "version": "1.0.0",
-  "description": "",
+  "description": "Milk Store Backend build by express",
   "main": "src/index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "vercel-start": "node src/index.js",
-    "build": "echo 'No build step needed'"
+    "build": "echo 'No build step needed'",
+    "format": "prettier --write ."
   },
-  "author": "",
+  "author": "Collin",
   "license": "ISC",
   "dependencies": {
     "asm_fer202_be": "file:",
@@ -27,6 +28,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "prettier": "^3.5.3"
   }
 }
