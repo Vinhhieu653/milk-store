@@ -23,14 +23,12 @@ const userRoutes = require('./routes/userRoutes')
 const productRoutes = require('./routes/productRoutes')
 const knowledgeRoutes = require('./routes/knowledgeRoutes')
 const commentRoutes = require('./routes/commentRoutes')
-const messageRoutes = require('./routes/messageRoutes')
 const cartRoutes = require('./routes/cartRoutes')
 
 app.use('/users', userRoutes)
 app.use('/products', productRoutes)
 app.use('/knowledge', knowledgeRoutes)
 app.use('/comments', commentRoutes)
-app.use('/messages', messageRoutes)
 app.use('/cart', cartRoutes)
 
 app.listen(port, (error) => {
