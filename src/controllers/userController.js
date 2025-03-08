@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const argon2 = require('argon2')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 const { v4: uuidv4 } = require('uuid')
@@ -11,14 +11,14 @@ exports.register = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' })
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 10)
+    // Hash password bằng Argon2
+    const hashedPassword = await argon2.hash(password)
 
     const newUser = new User({
-      userId: uuidv4(), // Đảm bảo userId luôn có giá trị
+      userId: uuidv4(),
       username,
       email,
-      password: hashedPassword // Lưu password đã mã hóa
+      password: hashedPassword
     })
 
     await newUser.save()
@@ -38,10 +38,13 @@ exports.login = async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: 'User not found' })
     }
-    const isMatch = await bcrypt.compare(password, user.password)
+
+    // Kiểm tra mật khẩu bằng Argon2
+    const isMatch = await argon2.verify(user.password, password)
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' })
     }
+
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' })
     res.json({ message: 'Login successful', token, userId: user._id })
   } catch (error) {
