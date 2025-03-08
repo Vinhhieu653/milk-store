@@ -11,6 +11,7 @@ const options = {
       description: 'API documentation for Milk Store'
     },
     servers: [{ url: 'http://localhost:4000' }],
+
     tags: [
       { name: 'Users', description: 'User management' },
       { name: 'Milk', description: 'Milk management' },
@@ -18,7 +19,18 @@ const options = {
       { name: 'Knowledge', description: 'Knowledge articles' },
       { name: 'Comment', description: 'Product comments' },
       { name: 'Message', description: 'User messages' }
-    ]
+    ],
+
+    components: {
+      securitySchemes: {
+        BearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT'
+        }
+      }
+    },
+    security: [{ BearerAuth: [] }] // Áp dụng mặc định cho tất cả API
   },
   apis: [path.join(__dirname, '../routes/*.js')]
 }

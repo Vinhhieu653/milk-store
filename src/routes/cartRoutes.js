@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const cartController = require('../controllers/cartController')
-
+const authMiddleware = require('../middlewares/authMiddleware')
 /**
  * @swagger
  * tags:
@@ -38,7 +38,7 @@ const cartController = require('../controllers/cartController')
  *       500:
  *         description: Internal server error
  */
-router.post('/add', cartController.addToCart)
+router.post('/add', authMiddleware, cartController.addToCart)
 
 /**
  * @swagger
@@ -52,7 +52,7 @@ router.post('/add', cartController.addToCart)
  *       500:
  *         description: Internal server error
  */
-router.get('/all', cartController.getAllCartItems)
+router.get('/all', authMiddleware, cartController.getAllCartItems)
 
 /**
  * @swagger
@@ -75,7 +75,7 @@ router.get('/all', cartController.getAllCartItems)
  *       500:
  *         description: Internal server error
  */
-router.get('/:userId', cartController.getCartByUser)
+router.get('/:userId', authMiddleware, cartController.getCartByUser)
 
 /**
  * @swagger
@@ -110,7 +110,7 @@ router.get('/:userId', cartController.getCartByUser)
  *       500:
  *         description: Internal server error
  */
-router.put('/:cart_item_id', cartController.updateCartItem)
+router.put('/:cart_item_id', authMiddleware, cartController.updateCartItem)
 
 /**
  * @swagger
@@ -133,7 +133,7 @@ router.put('/:cart_item_id', cartController.updateCartItem)
  *       500:
  *         description: Internal server error
  */
-router.delete('/:cart_item_id', cartController.removeCartItem)
+router.delete('/:cart_item_id', authMiddleware, cartController.removeCartItem)
 
 /**
  * @swagger
@@ -154,6 +154,6 @@ router.delete('/:cart_item_id', cartController.removeCartItem)
  *       500:
  *         description: Internal server error
  */
-router.delete('/clear/:user_id', cartController.clearCart)
+router.delete('/clear/:user_id', authMiddleware, cartController.clearCart)
 
 module.exports = router
