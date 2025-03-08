@@ -5,6 +5,7 @@ const cors = require('cors')
 const connectDB = require('./config/db')
 const bodyParser = require('body-parser')
 const app = express()
+const swaggerSetup = require('./config/swagger')
 
 const port = process.env.PORT || 4000
 
@@ -14,6 +15,9 @@ connectDB()
 app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
+
+//config swagger
+swaggerSetup(app)
 
 const userRoutes = require('./routes/userRoutes')
 const productRoutes = require('./routes/productRoutes')

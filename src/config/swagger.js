@@ -1,0 +1,30 @@
+const swaggerJSDoc = require('swagger-jsdoc')
+const swaggerUI = require('swagger-ui-express')
+const path = require('path')
+
+const options = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'Milk Store API',
+      version: '1.0.0',
+      description: 'API documentation for Milk Store'
+    },
+    servers: [{ url: 'http://localhost:4000' }],
+    tags: [
+      { name: 'Users', description: 'User management' },
+      { name: 'Milk', description: 'Milk management' },
+      { name: 'Cart', description: 'Shopping cart' },
+      { name: 'Knowledge', description: 'Knowledge articles' },
+      { name: 'Comment', description: 'Product comments' },
+      { name: 'Message', description: 'User messages' }
+    ]
+  },
+  apis: [path.join(__dirname, '../routes/*.js')]
+}
+
+const swaggerSpec = swaggerJSDoc(options)
+
+module.exports = (app) => {
+  app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec))
+}
