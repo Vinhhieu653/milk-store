@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const userController = require('../controllers/userController')
+const authMiddleware = require('../middlewares/authMiddleware')
 
 /**
  * @swagger
@@ -11,7 +12,7 @@ const userController = require('../controllers/userController')
 
 /**
  * @swagger
- * /users/register:
+ * /api/users/register:
  *   post:
  *     summary: Register a new user
  *     tags: [Users]
@@ -41,7 +42,7 @@ router.post('/register', userController.register)
 
 /**
  * @swagger
- * /users/login:
+ * /api/users/login:
  *   post:
  *     summary: Login a user
  *     tags: [Users]
@@ -54,7 +55,7 @@ router.post('/register', userController.register)
  *             properties:
  *               email:
  *                 type: string
- *                 example: example@gmail.com
+ *                 example: duongvinhhieu652003@gmail.com.vn
  *               password:
  *                 type: string
  *                 example: 123
@@ -65,5 +66,37 @@ router.post('/register', userController.register)
  *         description: Unauthorized
  */
 router.post('/login', userController.login)
+
+/**
+ * @swagger
+ * /api/users/change-password:
+ *   post:
+ *     summary: Change user password
+ *     tags: [Users]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               oldPassword:
+ *                 type: string
+ *                 example: oldPass123
+ *               newPassword:
+ *                 type: string
+ *                 example: newPass456
+ *     responses:
+ *       200:
+ *         description: Password changed successfully
+ *       400:
+ *         description: Invalid request or incorrect old password
+ *       401:
+ *         description: Unauthorized
+ */
+
+router.post('/change-password', authMiddleware, userController.changePassword)
 
 module.exports = router

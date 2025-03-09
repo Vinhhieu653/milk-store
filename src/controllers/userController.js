@@ -52,3 +52,47 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: 'Server error' })
   }
 }
+
+exports.changePassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword } = req.body
+
+    // Kiểm tra nếu các trường mật khẩu cũ và mới không có
+    if (!oldPassword || !newPassword) {
+      return res.status(400).json({ message: 'Tất cả các trường là bắt buộc' })
+    }
+
+    // Kiểm tra độ dài mật khẩu mới (Ví dụ: ít nhất 3 ký tự)
+    if (newPassword.length < 3) {
+      return res.status(400).json({ message: 'Mật khẩu mới phải có ít nhất 3 ký tự' })
+    }
+
+    const userId = req.user.userId // Lấy userId từ thông tin người dùng đã được xác thực
+    const user = await User.findById(userId) // Tìm người dùng theo userId
+
+    if (!user) {
+      return res.status(404).json({ message: 'Người dùng không tồn tại' })
+    }
+
+    // Kiểm tra mật khẩu cũ
+    const isMatch = await argon2.verify(user.password, oldPassword)
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Mật khẩu cũ không đúng' })
+    }
+
+    // Kiểm tra mật khẩu mới có trùng với mật khẩu cũ không
+    const isSameAsOldPassword = await argon2.verify(user.password, newPassword)
+    if (isSameAsOldPassword) {
+      return res.status(400).json({ message: 'Mật khẩu mới không được trùng với mật khẩu cũ' })
+    }
+
+    // Cập nhật mật khẩu mới
+    user.password = await argon2.hash(newPassword)
+    await user.save()
+
+    res.json({ message: 'Đổi mật khẩu thành công!' })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Lỗi server, vui lòng thử lại sau' })
+  }
+}

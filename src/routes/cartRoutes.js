@@ -11,7 +11,7 @@ const cartController = require('../controllers/cartController')
 
 /**
  * @swagger
- * /cart/add:
+ * /api/cart/add:
  *   post:
  *     summary: Add a product to the cart
  *     tags: [Cart]
@@ -42,7 +42,7 @@ router.post('/add', cartController.addToCart)
 
 /**
  * @swagger
- * /cart/all:
+ * /api/cart/all:
  *   get:
  *     summary: Get all cart items
  *     tags: [Cart]
@@ -56,7 +56,7 @@ router.get('/all', cartController.getAllCartItems)
 
 /**
  * @swagger
- * /cart/{userId}:
+ * /api/cart/{userId}:
  *   get:
  *     summary: Get cart items by user ID
  *     tags: [Cart]
@@ -79,7 +79,7 @@ router.get('/:userId', cartController.getCartByUser)
 
 /**
  * @swagger
- * /cart/{cart_item_id}:
+ * /api/cart/{cart_item_id}:
  *   put:
  *     summary: Update quantity of a cart item
  *     tags: [Cart]
@@ -114,7 +114,7 @@ router.put('/:cart_item_id', cartController.updateCartItem)
 
 /**
  * @swagger
- * /cart/{cart_item_id}:
+ * /api/cart/{cart_item_id}:
  *   delete:
  *     summary: Remove a cart item
  *     tags: [Cart]
@@ -137,7 +137,7 @@ router.delete('/:cart_item_id', cartController.removeCartItem)
 
 /**
  * @swagger
- * /cart/clear/{user_id}:
+ * /api/cart/clear/{user_id}:
  *   delete:
  *     summary: Clear all cart items for a user
  *     tags: [Cart]

@@ -11,7 +11,7 @@ const knowledgeController = require('../controllers/knowledgeController')
 
 /**
  * @swagger
- * /knowledge:
+ * /api/knowledge:
  *   get:
  *     summary: Get all knowledge articles
  *     tags: [Knowledge]
@@ -25,7 +25,7 @@ router.get('/', knowledgeController.getAllKnowledgeArticles)
 
 /**
  * @swagger
- * /knowledge/{id}:
+ * /api/knowledge/{id}:
  *   get:
  *     summary: Get a knowledge article by ID
  *     tags: [Knowledge]

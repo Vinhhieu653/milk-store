@@ -13,6 +13,7 @@ const options = {
     servers: [{ url: 'http://localhost:4000' }],
 
     tags: [
+      { name: 'App', description: 'Test API' },
       { name: 'Users', description: 'User management' },
       { name: 'Milk', description: 'Milk management' },
       { name: 'Cart', description: 'Shopping cart' },

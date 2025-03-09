@@ -6,6 +6,7 @@ const connectDB = require('./config/db')
 const bodyParser = require('body-parser')
 const app = express()
 const swaggerSetup = require('./config/swagger')
+const apiRoutes = require('./routes/api')
 
 const port = process.env.PORT || 4000
 
@@ -25,11 +26,13 @@ const knowledgeRoutes = require('./routes/knowledgeRoutes')
 const commentRoutes = require('./routes/commentRoutes')
 const cartRoutes = require('./routes/cartRoutes')
 
-app.use('/users', userRoutes)
-app.use('/products', productRoutes)
-app.use('/knowledge', knowledgeRoutes)
-app.use('/comments', commentRoutes)
-app.use('/cart', cartRoutes)
+//routes
+app.use('/api', apiRoutes)
+app.use('/api/users', userRoutes)
+app.use('/api/products', productRoutes)
+app.use('/api/knowledge', knowledgeRoutes)
+app.use('/api/comments', commentRoutes)
+app.use('/api/cart', cartRoutes)
 
 app.listen(port, (error) => {
   if (!error) {

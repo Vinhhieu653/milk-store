@@ -11,7 +11,7 @@ const { getAllProducts, getMilkProducts, getProductById } = require('../controll
 
 /**
  * @swagger
- * /products:
+ * /api/products:
  *   get:
  *     summary: Get all products (including all categories)
  *     tags: [Milk]
@@ -23,7 +23,7 @@ router.get('/', getAllProducts)
 
 /**
  * @swagger
- * /products/milk-products:
+ * /api/products/milk-products:
  *   get:
  *     summary: Get 3 random milk products
  *     tags: [Milk]
@@ -37,7 +37,7 @@ router.get('/milk-products', getMilkProducts)
 
 /**
  * @swagger
- * /products/{id}:
+ * /api/products/{id}:
  *   get:
  *     summary: Get product by ID
  *     tags: [Milk]
