@@ -25,6 +25,7 @@ const productRoutes = require('./routes/productRoutes')
 const knowledgeRoutes = require('./routes/knowledgeRoutes')
 const commentRoutes = require('./routes/commentRoutes')
 const cartRoutes = require('./routes/cartRoutes')
+const contactRoutes = require('./routes/contactRoutes')
 
 //routes
 app.use('/api', apiRoutes)
@@ -33,6 +34,7 @@ app.use('/api/products', productRoutes)
 app.use('/api/knowledge', knowledgeRoutes)
 app.use('/api/comments', commentRoutes)
 app.use('/api/cart', cartRoutes)
+app.use('/api/contact', contactRoutes)
 
 app.listen(port, (error) => {
   if (!error) {

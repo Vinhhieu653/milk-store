@@ -18,7 +18,8 @@ const options = {
       { name: 'Milk', description: 'Milk management' },
       { name: 'Cart', description: 'Shopping cart' },
       { name: 'Knowledge', description: 'Knowledge articles' },
-      { name: 'Comment', description: 'Product comments' }
+      { name: 'Comment', description: 'Product comments' },
+      { name: 'Contact', description: 'Send email' }
     ],
 
     components: {
