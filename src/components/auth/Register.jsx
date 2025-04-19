@@ -56,6 +56,7 @@ const Register = () => {
       } else {
         toast.error(data.message || 'Đăng ký thất bại');
       }
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error('Có lỗi xảy ra, vui lòng thử lại');
     }

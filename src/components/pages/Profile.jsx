@@ -75,7 +75,6 @@ const Profile = () => {
     }
   };
 
-
   return (
     <div className='profile-container'>
       <div className='profile-card'>
@@ -92,8 +91,6 @@ const Profile = () => {
 
           <h2 className='profile-username'>{user?.name || 'Unknown User'}</h2>
           <p className='profile-email'>{user?.email || 'No email provided'}</p>
-
-
         </div>
 
         <form className='password-form' onSubmit={handleChangePassword}>

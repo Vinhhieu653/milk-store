@@ -17,7 +17,6 @@ export const Header = () => {
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const langMenuRef = useRef(null);
 
-
   useEffect(() => {
     setCurrentPath(location.pathname);
     setMobileMenuOpen(false);

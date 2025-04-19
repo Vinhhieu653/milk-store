@@ -63,6 +63,7 @@ export const Footer = () => {
       } else {
         toast.error(data.error || 'Gửi email thất bại');
       }
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error('Lỗi kết nối đến server');
     } finally {
