@@ -1,0 +1,31 @@
+/* CommentList.css */
+.comment-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: var(--bg-color); /* Sử dụng biến bg-color */
+  box-shadow: var(--shadow); /* Sử dụng biến shadow */
+  border-radius: 10px;
+  transition: var(--transition); /* Sử dụng biến transition */
+}
+
+.comment-item {
+  border-bottom: 1px solid var(--border-color); /* Sử dụng biến border-color */
+  padding: 1rem 0;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-rating {
+  margin-top: 0.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .comment-list {
+    padding: 15px;
+  }
+}

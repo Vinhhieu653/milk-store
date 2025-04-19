@@ -1,0 +1,68 @@
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333; /* Màu chữ */
+  font-size: 1.8em; /* Kích thước font */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Khoảng cách giữa các nhóm input */
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555; /* Màu chữ label */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.btn.login-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ffa500; /* Màu nút đăng nhập */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease; /* Hiệu ứng hover */
+}
+
+.btn.login-btn:hover {
+  background: #cc8400; /* Đổi màu khi hover */
+}
+
+.register-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #555; /* Màu chữ */
+  font-size: 0.9em; /* Kích thước font */
+}
+
+.register-link a {
+  color: #4caf50; /* Màu chữ link */
+  text-decoration: none; /* Bỏ gạch chân link */
+  transition: color 0.3s ease; /* Hiệu ứng hover */
+}
+
+.register-link a:hover {
+  color: #45a049; /* Đổi màu khi hover */
+}

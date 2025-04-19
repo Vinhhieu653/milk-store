@@ -1,0 +1,18 @@
+{
+  "site_title": "Mom & Baby",
+  "home": "Home",
+  "products": "Products",
+  "knowledge": "Knowledge",
+  "about": "About",
+  "login": "Login",
+  "register": "Register",
+  "logout": "Logout",
+  "logout_confirm": "Do you want to log out?",
+  "logout_success": "Logged out!",
+  "vietnamese": "Vietnamese",
+  "english": "English",
+  "change_language": "Change language",
+  "switch_to_light": "Switch to light mode",
+  "switch_to_dark": "Switch to dark mode",
+  "shopping_cart": "Shopping cart"
+}

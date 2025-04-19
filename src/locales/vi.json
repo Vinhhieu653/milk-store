@@ -1,0 +1,18 @@
+{
+  "site_title": "Mẹ Bầu và Bé",
+  "home": "Trang chủ",
+  "products": "Sản phẩm",
+  "knowledge": "Kiến thức",
+  "about": "Giới thiệu",
+  "login": "Đăng nhập",
+  "register": "Đăng ký",
+  "logout": "Đăng xuất",
+  "logout_confirm": "Bạn muốn đăng xuất?",
+  "logout_success": "Đã đăng xuất!",
+  "vietnamese": "Tiếng Việt",
+  "english": "English",
+  "change_language": "Thay đổi ngôn ngữ",
+  "switch_to_light": "Chuyển sang chế độ sáng",
+  "switch_to_dark": "Chuyển sang chế độ tối",
+  "shopping_cart": "Giỏ hàng"
+}

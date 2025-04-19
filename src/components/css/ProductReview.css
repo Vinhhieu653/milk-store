@@ -1,0 +1,41 @@
+/* ProductReview.css */
+.product-review-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: var(--bg-color); /* Sử dụng biến bg-color */
+  box-shadow: var(--shadow); /* Sử dụng biến shadow */
+  border-radius: 10px;
+  transition: var(--transition); /* Sử dụng biến transition */
+}
+
+.review-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color); /* Sử dụng biến primary-color */
+}
+
+.comment-form {
+  margin-bottom: 2rem;
+}
+
+.comment-list {
+  /* List styling is handled in CommentList.css */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-review-container {
+    padding: 15px;
+  }
+
+  .review-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-heading {
+    font-size: 1.5rem;
+  }
+}

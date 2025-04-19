@@ -1,0 +1,138 @@
+/* ProductDetail.css */
+
+.product-detail-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: #ff65a3; /* Pink button */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #ff4d93; /* Darker pink hover */
+}
+
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-detail-image-container {
+  flex: 1 1 300px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-detail-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-detail-info {
+  flex: 2 1 400px; /* Adjust as needed */
+}
+
+.product-name {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ff65a3; /* Pink title */
+}
+
+.product-meta {
+  margin-bottom: 20px;
+}
+
+.product-meta p {
+  margin: 5px 0;
+  color: #333; /* Dark text for readability */
+}
+
+.product-weight strong,
+.product-price strong {
+  font-weight: 600;
+  color: #ff65a3; /* Pink strong text */
+}
+
+.product-description {
+  margin-bottom: 20px;
+}
+
+.product-description h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff65a3; /* Pink heading */
+}
+
+.product-description p {
+  color: #6b7280; /* Gray description text */
+  line-height: 1.6;
+}
+
+.add-to-cart-button {
+  padding: 12px 20px;
+  background-color: #ff65a3; /* Pink button */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #ff4d93; /* Darker pink hover */
+}
+
+/* Loading and Error States */
+.product-detail-container.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #ff65a3; /* Pink loader */
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.product-detail-container.error {
+  text-align: center;
+  padding: 20px;
+  color: #ff4d93; /* Darker pink error text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+  }
+}
