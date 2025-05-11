@@ -24,7 +24,7 @@ const Cart = () => {
           return;
         }
 
-        const response = await axios.get(`http://localhost:4000/api/cart/${userId}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cart/${userId}`);
         setCart(response.data || []);
       } catch (error) {
         console.error('Error fetching cart items:', error);
@@ -43,7 +43,7 @@ const Cart = () => {
       if (!confirmed) return;
 
       setUpdating(true);
-      await axios.delete(`http://localhost:4000/api/cart/${cartItemId}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/cart/${cartItemId}`);
 
       setCart((prevCart) => prevCart.filter((item) => item._id !== cartItemId));
       toast.success('Đã xóa sản phẩm khỏi giỏ hàng!');
@@ -60,7 +60,7 @@ const Cart = () => {
 
     try {
       setUpdating(true);
-      const response = await axios.put(`http://localhost:4000/api/cart/${cartItemId}`, { quantity: newQuantity });
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/cart/${cartItemId}`, { quantity: newQuantity });
 
       setCart((prevCart) =>
         prevCart.map((item) =>

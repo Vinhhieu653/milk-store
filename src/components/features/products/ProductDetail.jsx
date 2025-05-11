@@ -22,7 +22,7 @@ const ProductDetail = () => {
       const confirmed = window.confirm('Bạn có muốn thêm sản phẩm này vào giỏ hàng không?');
       if (!confirmed) return;
 
-      await axios.post('http://localhost:4000/api/cart/add', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/cart/add`, {
         userId,
         productId
       });
