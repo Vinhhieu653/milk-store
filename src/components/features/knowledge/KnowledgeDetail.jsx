@@ -37,8 +37,8 @@ const KnowledgeDetail = () => {
       setLoading(true);
       try {
         const [articleResponse, productsResponse] = await Promise.all([
-          axios.get(`http://localhost:4000/api/knowledge/${id}`),
-          axios.get(`http://localhost:4000/api/products/milk-products`)
+          axios.get(`${import.meta.env.VITE_API_URL}/api/knowledge/${id}`),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/products/milk-products`)
         ]);
 
         setArticle(articleResponse.data);

@@ -16,6 +16,7 @@
     "@mui/material": "^7.0.2",
     "@tailwindcss/vite": "^4.1.4",
     "axios": "^1.8.4",
+    "dotenv": "^16.5.0",
     "fe-vite": "file:",
     "i18next": "^25.0.0",
     "i18next-browser-languagedetector": "^8.0.5",

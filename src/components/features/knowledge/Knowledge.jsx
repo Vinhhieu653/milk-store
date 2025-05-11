@@ -12,7 +12,7 @@ const Knowledge = () => {
 
   const fetchArticles = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/api/knowledge');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/knowledge`);
       setArticles(response.data);
     } catch (error) {
       console.error('Lỗi khi lấy dữ liệu:', error);

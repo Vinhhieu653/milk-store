@@ -14,7 +14,7 @@ const ProductReview = () => {
 
   const loadComments = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/comments');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/comments`);
       if (!response.ok) {
         throw new Error('Failed to fetch comments');
       }
@@ -29,7 +29,7 @@ const ProductReview = () => {
     if (newComment.text.trim() === '') return;
 
     try {
-      const response = await fetch('http://localhost:4000/api/comments', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/comments`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
