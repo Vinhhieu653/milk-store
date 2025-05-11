@@ -78,18 +78,20 @@ const Cart = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
   if (!isLoggedIn) return <p>Vui lòng đăng nhập để xem giỏ hàng của bạn</p>;
+  // Giỏ hàng sẽ tính tổng số lượng sản phẩm
+  const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <div className='cart-container'>
-      <h2>Giỏ hàng</h2>
+      <h2>Giỏ hàng ({totalQuantity} sản phẩm)</h2>
       {cart.length === 0 ? (
         <p>Giỏ hàng trống</p>
       ) : (
         <div>
           {cart.map((item) => {
             const product = item.productId || {};
-            const price = product.price || 0; // Đảm bảo có giá trị
-            const quantity = item.quantity || 1; // Mặc định là 1 nếu không có
+            const price = product.price || 0;
+            const quantity = item.quantity || 1;
             const totalItemPrice = price * quantity;
 
             return (

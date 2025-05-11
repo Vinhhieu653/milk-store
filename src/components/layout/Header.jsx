@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
   const { t, i18n } = useTranslation();
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn, logout, cart, setCart } = useAuth(); // Assuming `setCart` is available in your context
   const navigate = useNavigate();
   const location = useLocation();
   const [currentPath, setCurrentPath] = useState(location.pathname);
@@ -16,6 +16,24 @@ export const Header = () => {
   const [language, setLanguage] = useState(i18n.language || 'vi');
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const langMenuRef = useRef(null);
+
+  // Giỏ hàng sẽ tính tổng số lượng sản phẩm
+  const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+
+  // Lưu giỏ hàng vào localStorage khi giỏ hàng thay đổi
+  useEffect(() => {
+    if (cart.length > 0) {
+      localStorage.setItem('cart', JSON.stringify(cart)); // Lưu giỏ hàng vào localStorage
+    }
+  }, [cart]);
+
+  // Khôi phục giỏ hàng từ localStorage khi trang tải lại
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (savedCart.length > 0) {
+      setCart(savedCart); // Cập nhật giỏ hàng vào context
+    }
+  }, [setCart]);
 
   useEffect(() => {
     setCurrentPath(location.pathname);
@@ -187,6 +205,7 @@ export const Header = () => {
                   <circle cx='20' cy='21' r='1'></circle>
                   <path d='M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6'></path>
                 </svg>
+                {totalQuantity > 0 && <span className='cart-quantity-badge'>{totalQuantity}</span>}
               </Link>
 
               <div className='site-header__user-profile'>

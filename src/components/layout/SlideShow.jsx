@@ -6,13 +6,10 @@ const SlideShow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
-  const slides = useMemo(() => [
-    '/img/banner1.webp',
-    '/img/banner2.webp',
-    '/img/banner3.webp',
-    '/img/banner4.webp',
-    '/img/banner5.webp'
-  ], []);
+  const slides = useMemo(
+    () => ['/img/banner1.webp', '/img/banner2.webp', '/img/banner3.webp', '/img/banner4.webp', '/img/banner5.webp'],
+    []
+  );
 
   const intervalRef = useRef(null);
 

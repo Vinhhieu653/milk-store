@@ -328,6 +328,7 @@
   text-decoration: none;
   transition: all 0.4s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative; /* This is important for positioning the quantity badge */
 }
 
 .site-header__cart:hover {
@@ -335,6 +336,25 @@
   color: #fff;
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(255, 51, 102, 0.3);
+}
+
+/* Badge style */
+.cart-quantity-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .site-header__user-profile {
