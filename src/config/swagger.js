@@ -10,7 +10,9 @@ const options = {
       version: '1.0.0',
       description: 'API documentation for Milk Store'
     },
-    servers: [{ url: 'http://localhost:4000' }],
+    // servers: [{ url: 'http://localhost:4000' }],
+    servers: [{ url: `${process.env.VITE_API_URL}/` }],
+
 
     tags: [
       { name: 'App', description: 'Test API' },

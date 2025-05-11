@@ -15,7 +15,14 @@ connectDB()
 
 app.use(bodyParser.json())
 app.use(express.json())
-app.use(cors())
+
+//config cors
+app.use(cors({
+  origin: 'https://milk-store-silk.vercel.app/',  // Thay 'your-frontend-domain' bằng domain thật của bạn
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
+
 
 //config swagger
 swaggerSetup(app)
