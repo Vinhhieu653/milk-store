@@ -18,8 +18,7 @@ app.use(express.json())
 
 //config cors
 app.use(cors({
-  origin: 'https://milk-store-brown.vercel.app/',  // Thay 'your-frontend-domain' bằng domain thật của bạn
-  methods: ['GET', 'POST'],
+  origin: 'https://milk-store-brown.vercel.app',
   allowedHeaders: ['Content-Type'],
 }));
 
