@@ -18,7 +18,8 @@ app.use(express.json())
 
 //config cors
 app.use(cors({
-  origin: 'https://milk-store-brown.vercel.app',
+  origin: ['https://milk-store-brown.vercel.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
 
